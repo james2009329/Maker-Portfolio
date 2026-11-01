@@ -59,8 +59,9 @@ three modes turn the machine into three textbook numerical methods: a left Riema
 the midpoint rule (~h²) and the trapezoidal rule (~h²). That made it the subject of my IB Math
 IA, testing whether the measured error shrinks at the predicted rates.
 
-Three files: `integrator_controller.ino` (motors, AS5600 wheel encoder, serial commands),
-`integrator_display.ino` (touchscreen menus, live graphs, calibration screen), and
+Two Arduino sketches, each in its own folder so the IDE doesn't merge them:
+`integrator_controller/` (motors, AS5600 wheel encoder, serial commands) and
+`integrator_display/` (touchscreen menus, live graphs, calibration screen). Plus
 `integrator_logger.py` (runs the experiment over USB, logs each run to CSV, fits the convergence
 order and plots it).
 
