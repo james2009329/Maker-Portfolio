@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Eye Switch</string>
+
+    <!-- Common -->
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="done">Done</string>
+    <string name="back">Back</string>
+
+    <string name="gesture_left">Look left</string>
+    <string name="gesture_right">Look right</string>
+    <string name="gesture_blink">Blink</string>
+
+    <!-- Status -->
+    <string name="status_connected">Toy connected</string>
+    <string name="status_phone_only">Phone only</string>
+    <string name="status_permission">Allow USB access</string>
+    <string name="calibrated_when">Calibrated %1$s</string>
+    <string name="not_calibrated">Not calibrated</string>
+
+    <!-- Home -->
+    <string name="home_start">Start</string>
+    <string name="home_start_sub">Student mode</string>
+    <string name="home_setup">Set up</string>
+    <string name="home_setup_sub">Position the phone and calibrate</string>
+    <string name="home_settings">Settings</string>
+    <string name="home_settings_sub">Choose what each look does</string>
+    <string name="home_help">How to set up</string>
+    <string name="home_last_session">Last session: %1$s, %2$s</string>
+    <plurals name="activations">
+        <item quantity="one">%d activation</item>
+        <item quantity="other">%d activations</item>
+    </plurals>
+
+    <!-- Students -->
+    <string name="profile_title">Student</string>
+    <string name="profile_default_name">Student %1$d</string>
+    <string name="profile_add">Add student</string>
+    <string name="profile_rename">Rename</string>
+    <string name="profile_remove">Remove</string>
+    <string name="profile_name_hint">Name</string>
+    <string name="profile_remove_title">Remove %1$s?</string>
+    <string name="profile_remove_body">Their calibration and settings will be deleted.</string>
+    <string name="profile_cannot_remove">There has to be at least one student.</string>
+
+    <!-- Student mode -->
+    <string name="student_looking">Looking for a face</string>
+    <string name="student_watching">Watching</string>
+    <string name="student_done">Done</string>
+    <string name="summary_title">Session with %1$s</string>
+    <plurals name="activations_word">
+        <item quantity="one">activation</item>
+        <item quantity="other">activations</item>
+    </plurals>
+    <plurals name="minutes">
+        <item quantity="one">In %d minute.</item>
+        <item quantity="other">In %d minutes.</item>
+    </plurals>
+    <string name="summary_home">Back to home</string>
+    <string name="summary_keep_going">Keep going</string>
+
+    <!-- Calibration -->
+    <string name="cal_centre">Ask them to look at the dot in the middle</string>
+    <string name="cal_left">Now the left circle</string>
+    <string name="cal_right">Now the right circle</string>
+    <string name="cal_done_title">Calibrated</string>
+    <string name="cal_done_body">Looking left and right are now tuned to this student. Calibrate again if the phone moves.</string>
+    <string name="cal_failed_title">Try again</string>
+    <string name="cal_failed_body">The eyes could not be read clearly. Check the face fits the oval on the Set up screen, the room is bright enough, and the student looks fully at each circle.</string>
+    <string name="cal_again">Calibrate again</string>
+
+    <!-- Set up -->
+    <string name="setup_title">Set up</string>
+    <string name="setup_calibration">Calibration</string>
+    <string name="setup_calibration_help">With the student in position, press Calibrate and ask them to look at the middle, then the left circle, then the right circle. Takes about 10 seconds.</string>
+    <string name="setup_calibrate">Calibrate</string>
+    <string name="setup_live">Live reading</string>
+    <string name="setup_test">Try each look</string>
+    <string name="setup_test_help">Runs the action without the student, to check the toy, song and lights.</string>
+    <string name="test_left">Left</string>
+    <string name="test_right">Right</string>
+    <string name="test_blink">Blink</string>
+    <string name="meter_left">L</string>
+    <string name="meter_right">R</string>
+    <string name="meter_blink">Blink</string>
+    <string name="guide_no_face">Fit the student\'s face in the oval</string>
+    <string name="guide_adjust">Move the phone so the face is centered</string>
+    <string name="guide_good">Face found</string>
+    <string name="guide_dark">The room is too dark</string>
+    <string name="label_back_camera">Use the rear camera</string>
+    <string name="help_back_camera">The rear camera has a better lens, which helps with glasses. The screen then faces away from the student.</string>
+
+    <!-- Settings -->
+    <string name="settings_title">Settings</string>
+    <string name="section_actions">What each look does</string>
+    <string name="section_sensitivity">Sensitivity</string>
+    <string name="section_style">Targets</string>
+    <string name="section_reward">Song and lights</string>
+    <string name="section_advanced">Advanced</string>
+
+    <string name="opt_none">Off</string>
+    <string name="opt_switch">Switch</string>
+    <string name="opt_song">Song</string>
+    <string name="opt_lights">Lights</string>
+    <string name="opt_both">Both</string>
+    <string name="action_none">Does nothing</string>
+    <string name="action_switch">Presses the toy switch</string>
+    <string name="action_song">Plays a song</string>
+    <string name="action_lights">Shows lights</string>
+    <string name="action_both">Plays a song with lights</string>
+
+    <string name="button_choose_song">Choose song</string>
+    <string name="button_built_in">Built-in tune</string>
+    <string name="song_built_in">Built-in tune</string>
+    <string name="song_chosen">%1$s</string>
+
+    <string name="sens_easy">Easy</string>
+    <string name="sens_medium">Medium</string>
+    <string name="sens_hard">Hard</string>
+    <string name="sens_easy_help">A small glance counts. Good for students who are just starting out.</string>
+    <string name="sens_medium_help">The student looks most of the way to the circle.</string>
+    <string name="sens_hard_help">The student looks right at the circle. Fewer accidental triggers.</string>
+    <string name="sens_custom_help">Custom, set under Advanced.</string>
+
+    <string name="style_colours">Colors</string>
+    <string name="style_animals">Animals</string>
+    <string name="style_arrows">Arrows</string>
+
+    <string name="label_reward_length">How long it plays</string>
+    <string name="reward_short">Short, 3 s</string>
+    <string name="reward_medium">Medium, 6 s</string>
+    <string name="reward_long">Long, 10 s</string>
+    <string name="label_sound">Beep when the switch is pressed</string>
+    <string name="lights_safety_note">Lights fade slowly between soft colors and never flash or strobe, so they are safe for students with photosensitive epilepsy.</string>
+
+    <string name="label_gaze">Look sensitivity: %1$d%%</string>
+    <string name="help_gaze">Higher means a smaller glance counts.</string>
+    <string name="label_blink">Blink sensitivity: %1$d%%</string>
+    <string name="help_blink">Higher means the eyes do not have to shut as firmly.</string>
+    <string name="label_hold">Hold time: %1$d ms</string>
+    <string name="help_hold">How long a look must last. Higher ignores quick glances and normal blinks.</string>
+    <string name="label_refractory">Gap between activations: %1$d ms</string>
+    <string name="help_refractory">Stops one long look from triggering again and again.</string>
+    <string name="label_pulse">Switch press length: %1$d ms</string>
+    <string name="help_pulse">How long the toy switch stays pressed each time.</string>
+    <string name="label_swap">Swap left and right</string>
+    <string name="help_swap">Only matters before calibrating. Calibration works out left and right by itself.</string>
+    <string name="button_clear_calibration">Clear calibration</string>
+    <string name="clear_calibration_body">This student will need calibrating again.</string>
+    <string name="button_reset">Reset to defaults</string>
+    <string name="reset_body">All of this student\'s settings and their calibration go back to the defaults.</string>
+
+    <!-- Walkthrough -->
+    <string name="onboard_step">Step %1$d of %2$d</string>
+    <string name="onboard_1_title">Mount the phone sideways</string>
+    <string name="onboard_1_body">Clamp it to the wheelchair tray in landscape, about an arm\'s length away, with the screen facing the student.</string>
+    <string name="onboard_2_title">Plug in the toy</string>
+    <string name="onboard_2_body">Connect the switch box with the USB cable, then plug the toy into the jack. Without the box, the phone still plays songs and lights on its own.</string>
+    <string name="onboard_3_title">Calibrate each student</string>
+    <string name="onboard_3_body">Open Set up, fit their face in the oval, then press Calibrate and follow the three steps. It takes about 10 seconds.</string>
+    <string name="onboard_skip">Skip</string>
+    <string name="onboard_next">Next</string>
+    <string name="onboard_done">Get started</string>
+
+    <!-- Errors -->
+    <string name="error_permission">The camera is needed to see the student\'s eyes</string>
+    <string name="error_camera">Could not start the camera</string>
+    <string name="error_model">Could not load the face model</string>
+</resources>

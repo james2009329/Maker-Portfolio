@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="card_radius">22dp</dimen>
+    <dimen name="gap">16dp</dimen>
+    <dimen name="gap_small">8dp</dimen>
+    <dimen name="screen_pad">20dp</dimen>
+</resources>

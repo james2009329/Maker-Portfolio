@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Flat palette, no gradients. Matches Palette.kt. -->
+    <color name="background">#0F1B2D</color>
+    <color name="surface">#18283F</color>
+    <color name="surface_raised">#22344F</color>
+    <color name="text">#F3EFE6</color>
+    <color name="muted">#93A1B5</color>
+    <color name="ok">#6CC48A</color>
+    <color name="warn">#E8A66D</color>
+    <color name="left">#3FB8AF</color>
+    <color name="right">#F2B84B</color>
+    <color name="blink">#A99BDB</color>
+    <color name="ic_launcher_background">#0F1B2D</color>
+</resources>

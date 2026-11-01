@@ -38,45 +38,44 @@ an absolute encoder per module is the next change worth making.
 
 Libraries: FastAccelStepper, AsyncTCP, ESPAsyncWebServer, ArduinoJson.
 
-## [Mechanical integrator](mechanical-integrator/)
+## [Eye switch](eye-switch/)
 
-A disk-and-wheel integrator, the same principle as Thomson's 1876 machine and the integrators
-in Bush's differential analyzer, rebuilt with steppers and a mostly 3D-printed frame.
+A hands-free switch for students with multiple disabilities who can't press a normal
+adapted switch. An Android phone on the wheelchair tray watches the student's eyes, and
+a deliberate look left, look right, or held blink presses a toy's switch, plays a song,
+or fills the screen with soft colour.
 
-A wheel rides on a turntable at radius r. With no slip, its rotation adds up r as the disk turns:
+The app runs Google's MediaPipe Face Landmarker on every camera frame, entirely on the
+phone. It reports how far each eye is turned in and out, and the two eyes are averaged
+into one sideways reading:
 
 ```
-wheel rotation = (1/R) * integral of r dθ
+h = (outRight + inLeft)/2 - (outLeft + inRight)/2
 ```
 
-Set r = k·f(θ) and the wheel's total rotation is proportional to the integral of f. Taking the
-wheel past the disk centre makes r negative, so the machine computes signed area. Two stationary
-steppers drive the turntable and the carriage through a belt differential (same direction spins
-the disk, opposite directions slide the carriage), which keeps the moving carriage light.
+The camera sits at one end of a landscape phone, so looking left and right are never
+symmetrical. Calibration records `h` while the student looks at the centre, the left
+target, and the right target, then maps live readings so 1.0 always means "looking at
+that target". A gesture has to be held for the full hold time, fires once, and can't
+fire again until the student lets go and the refractory gap passes.
 
-Steppers don't move continuously, so the firmware splits each sweep into segments of size h. Its
-three modes turn the machine into three textbook numerical methods: a left Riemann sum (error ~h),
-the midpoint rule (~h²) and the trapezoidal rule (~h²). That made it the subject of my IB Math
-IA, testing whether the measured error shrinks at the predicted rates.
+A press goes over USB OTG to an ESP32 (`A250\n`), which closes a relay wired to a
+3.5 mm mono jack, the standard plug on switch-adapted toys. The phone powers the board
+over the same cable. Lights are capped well under the WCAG limit of three flashes a
+second: they only fade, and the timings are constants, not settings.
 
-Two Arduino sketches, each in its own folder so the IDE doesn't merge them:
-`integrator_controller/` (motors, AS5600 wheel encoder, serial commands) and
-`integrator_display/` (touchscreen menus, live graphs, calibration screen). Plus
-`integrator_logger.py` (runs the experiment over USB, logs each run to CSV, fits the convergence
-order and plots it).
-
-**Limitation:** the electronics aren't the limit: the encoder resolves 0.0015 rad, under 0.03% of
-a run. The mechanics are. In a one-run-per-setting trial, the left sum's error fell as predicted
-(fitted order 0.75 against 1), but the midpoint and trapezoid results for θ² carried a constant
-~6% bias that hid their h² errors. I haven't pinned down its cause yet. There are also no
-endstops, so the wheel has to be centred over the disk by hand before each session.
+**Limitation:** the face model reports eye direction as blendshape scores, not a true
+gaze vector, so the app can only tell left, right and blink apart, not where on the
+screen someone is looking. It also needs a reasonably lit room, and detection accuracy
+hasn't yet been measured with students.
 
 | | |
 |---|---|
-| Controller | ESP32 + separate ESP32 touchscreen board (480×320) |
-| Wheel encoder | AS5600, 4096 counts/rev (0.0015 rad) |
-| Transmission | GT3 belts, 20:100 reduction, belt differential |
-| Integrating wheel | ~25 mm radius, omni-wheel |
-| Best result | within 0.9% of the exact integral (midpoint rule, fine segments) |
+| App | Kotlin, CameraX, Android 8.0+ |
+| Tracking | MediaPipe Face Landmarker, on-device |
+| Hold time | 150 to 2000 ms, saved per student |
+| Output | Relay contact closure, 3.5 mm mono jack, 50 to 2000 ms pulse |
+| Link | USB OTG serial, 115200 baud |
 
-Libraries: TFT_eSPI, QRCodeGenerator (display); pyserial, NumPy, matplotlib (logger).
+Libraries: MediaPipe Tasks Vision, CameraX, usb-serial-for-android, Material Components.
+The face model downloads on the first Gradle build and isn't stored in the repo.

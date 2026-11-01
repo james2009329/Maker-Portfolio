@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  USB vendor IDs of the serial chips found on common ESP32 dev boards.
+  If your board is not picked up automatically, run it once and check Logcat for the
+  vendor id, then add it here. The app still works without a match - you just have to
+  open it yourself instead of it launching on plug-in.
+-->
+<resources>
+    <!-- Silicon Labs CP210x (CP2102, CP2104) -->
+    <usb-device vendor-id="4292" />
+    <!-- WCH CH340 / CH341 -->
+    <usb-device vendor-id="6790" />
+    <!-- FTDI FT232 -->
+    <usb-device vendor-id="1027" />
+    <!-- Espressif native USB (ESP32-S2, S3, C3) -->
+    <usb-device vendor-id="12346" />
+</resources>

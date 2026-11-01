@@ -1,0 +1,13 @@
+*.iml
+.gradle
+/local.properties
+/.idea
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+local.properties
+
+# Face model is downloaded by app/build.gradle.kts on first build
+app/src/main/assets/face_landmarker.task
